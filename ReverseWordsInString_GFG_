@@ -1,0 +1,20 @@
+class Solution 
+{
+    //Function to reverse words in a given string.
+    String reverseWords(String S)
+    {
+        int end = S.length()  - 1 ;
+        String res = "";
+        
+        for(int i = S.length() - 1 ; i >= 0 ; i--){
+            char c_ch = S.charAt(i);
+            if(c_ch == '.'){
+                res += S.substring(i+1,end+1) + ".";
+                end = i - 1;
+            }
+        }
+        
+        res += S.substring(0,end+1);
+        return res;
+    }
+}
